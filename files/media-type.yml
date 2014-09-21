@@ -1,6 +1,6 @@
 description: "my_smtp_server"
 type: 0
 smtp_server: "127.0.0.1"
-smtp_helo: "knakayama.sh@gmail.com"
-smtp_email: "knakayama.sh@gmail.com"
+smtp_helo: <%= ENV['SMTP_HELO'] %>
+smtp_email: <%= ENV['SMTP_EMAIL'] %>
 

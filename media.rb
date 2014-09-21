@@ -1,8 +1,9 @@
 #!/usr/bin/env ruby
 
 require 'yaml'
+require 'erb'
 
-media_type    = YAML.load_file('./files/media-type.yml')
+media_type    = YAML.load(ERB.new(IO.read('./files/media-type.yml')).result)
 media_profile = YAML.load_file('./files/media-profile.yml')
 
 # media type
