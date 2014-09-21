@@ -6,7 +6,7 @@ applications:
 items:
   item1:
     name: "SSH service is running"
-    key_: "net.tcp.service[ssh]"
+    key_: "net.tcp.service[ssh,,65467]"
     type: 3 # Simple check
     value_type: 3
     delay: 60
