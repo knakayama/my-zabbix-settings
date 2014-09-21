@@ -1,0 +1,116 @@
+name: "My_Template_App_Chef_Server"
+groups:
+  - "Templates"
+applications:
+  - "Chef server"
+items:
+  item1:
+    name: "Chef server is running"
+    key_: "proc.num[chef-server]"
+    type: 0
+    value_type: 3
+    delay: 60
+    trapper_hosts: ""
+    formula: 1
+  item2:
+    name: "Erchef service is running"
+    key_: "proc.num[erchef]"
+    type: 0
+    value_type: 3
+    delay: 60
+    trapper_hosts: ""
+    formula: 1
+  item3:
+    name: "Rabbitmq service is running"
+    key_: "proc.num[rabbitmq]"
+    type: 0
+    value_type: 3
+    delay: 60
+    trapper_hosts: ""
+    formula: 1
+  item4:
+    name: "Chef-expander service is running"
+    key_: "proc.num[chef-expander]"
+    type: 0
+    value_type: 3
+    delay: 60
+    trapper_hosts: ""
+    formula: 1
+  item5:
+    name: "Nginx service is running"
+    key_: "proc.num[nginx]"
+    type: 0
+    value_type: 3
+    delay: 60
+    trapper_hosts: ""
+    formula: 1
+  item6:
+    name: "Chef-server-webui service is running"
+    key_: "proc.num[chef-server-webui]"
+    type: 0
+    value_type: 3
+    delay: 60
+    trapper_hosts: ""
+    formula: 1
+  item7:
+    name: "Chef-solr service is running"
+    key_: "proc.num[chef-solr]"
+    type: 0
+    value_type: 3
+    delay: 60
+    trapper_hosts: ""
+    formula: 1
+  item8:
+    name: "Postgresql service is running"
+    key_: "proc.num[postgresql]"
+    type: 0
+    value_type: 3
+    delay: 60
+    trapper_hosts: ""
+    formula: 1
+  item9:
+    name: "Bookshelf service is running"
+    key_: "proc.num[bookshelf]"
+    type: 0
+    value_type: 3
+    delay: 60
+    trapper_hosts: ""
+    formula: 1
+triggers:
+  trigger1:
+    description: "Chef server is down on {HOST.NAME}"
+    expression: "{My_Template_App_Chef_Server:proc.num[chef-server].max(#3)}=0"
+    priority: 3
+  trigger2:
+    description: "Erchef is down on {HOST.NAME}"
+    expression: "{My_Template_App_Chef_Server:proc.num[erchef].max(#3)}=0"
+    priority: 3
+  trigger3:
+    description: "Rabbitmq is down on {HOST.NAME}"
+    expression: "{My_Template_App_Chef_Server:proc.num[rabbitmq].max(#3)}=0"
+    priority: 3
+  trigger4:
+    description: "Chef-expander is down on {HOST.NAME}"
+    expression: "{My_Template_App_Chef_Server:proc.num[chef-expander].max(#3)}=0"
+    priority: 3
+  trigger5:
+    description: "Nginx server is down on {HOST.NAME}"
+    expression: "{My_Template_App_Chef_Server:proc.num[nginx].max(#3)}=0"
+    priority: 3
+  trigger6:
+    description: "Chef-server-webui is down on {HOST.NAME}"
+    expression: "{My_Template_App_Chef_Server:proc.num[chef-server-webui].max(#3)}=0"
+    priority: 3
+  trigger7:
+    description: "Chef-solr is down on {HOST.NAME}"
+    expression: "{My_Template_App_Chef_Server:proc.num[chef-solr].max(#3)}=0"
+    priority: 3
+  trigger8:
+    description: "Postgresql server is down on {HOST.NAME}"
+    expression: "{My_Template_App_Chef_Server:proc.num[postgresql].max(#3)}=0"
+    priority: 3
+  trigger9:
+    description: "Bookshelf server is down on {HOST.NAME}"
+    expression: "{My_Template_App_Chef_Server:proc.num[bookshelf].max(#3)}=0"
+    priority: 3
+

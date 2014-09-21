@@ -1,0 +1,21 @@
+name: "My_Template_App_SMTP_Service"
+groups:
+  - "Templates"
+applications:
+  - "SMTP service"
+items:
+  item1:
+    name: "SMTP service is running"
+    key_: "net.tcp.service[smtp]"
+    type: 0
+    value_type: 3
+    delay: 60
+    trapper_hosts: ""
+    formula: 1
+    valuemapid: 1
+triggers:
+  trigger1:
+    description: "SMTP service is down on {HOST.NAME}"
+    expression: "{My_Template_App_SMTP_Service:net.tcp.service[smtp].max(#3)}=0"
+    priority: 3
+

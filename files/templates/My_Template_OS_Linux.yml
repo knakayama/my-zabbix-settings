@@ -1,0 +1,126 @@
+name: "My_Template_OS_Linux"
+groups:
+  - "Templates"
+applications:
+  - "CPU"
+items:
+  item1:
+    name: "Context switches per second"
+    key_: "system.cpu.switches"
+    type: 0
+    value_type: 3
+    units: "sps"
+    delay: 60
+    trapper_hosts: ""
+    formula: 1
+  item2:
+    name: "CPU $2 time"
+    key_: "system.cpu.util[,iowait]"
+    type: 0
+    value_type: 0
+    units: "%"
+    delay: 60
+    trapper_hosts: ""
+    formula: 1
+  item3:
+    name: "CPU $2 time"
+    key_: "system.cpu.util[,system]"
+    type: 0
+    value_type: 0
+    units: "%"
+    delay: 60
+    trapper_hosts: ""
+    formula: 1
+  item4:
+    name: "CPU $2 time"
+    key_: "system.cpu.util[,nice]"
+    type: 0
+    value_type: 0
+    units: "%"
+    delay: 60
+    trapper_hosts: ""
+    formula: 1
+  item5:
+    name: "CPU $2 time"
+    key_: "system.cpu.util[,user]"
+    type: 0
+    value_type: 0
+    units: "%"
+    delay: 60
+    trapper_hosts: ""
+    formula: 1
+  item6:
+    name: "CPU $2 time"
+    key_: "system.cpu.util[,softirq]"
+    type: 0
+    value_type: 0
+    units: "%"
+    delay: 60
+    trapper_hosts: ""
+    formula: 1
+  item7:
+    name: "CPU $2 time"
+    key_: "system.cpu.util[,steal]"
+    type: 0
+    value_type: 0
+    units: "%"
+    delay: 60
+    trapper_hosts: ""
+    formula: 1
+  item8:
+    name: "CPU $2 time"
+    key_: "system.cpu.util[,interrupt]"
+    type: 0
+    value_type: 0
+    units: "%"
+    delay: 60
+    trapper_hosts: ""
+    formula: 1
+  item9:
+    name: "CPU $2 time"
+    key_: "system.cpu.util[,idle]"
+    type: 0
+    value_type: 0
+    units: "%"
+    delay: 60
+    trapper_hosts: ""
+    formula: 1
+  item10:
+    name: "interrupts per second"
+    key_: "system.cpu.intr"
+    type: 0
+    value_type: 3
+    units: "ips"
+    delay: 60
+    trapper_hosts: ""
+    formula: 1
+  item11:
+    name: "Processor load (1 min average per core)"
+    key_: "system.cpu.load[percpu,avg1]"
+    type: 0
+    value_type: 0
+    delay: 60
+    trapper_hosts: ""
+    formula: 1
+  item12:
+    name: "Processor load (5 min average per core)"
+    key_: "system.cpu.load[percpu,avg5]"
+    type: 0
+    value_type: 0
+    delay: 60
+    trapper_hosts: ""
+    formula: 1
+  item13:
+    name: "Processor load (15 min average per core)"
+    key_: "system.cpu.load[percpu,avg15]"
+    type: 0
+    value_type: 0
+    delay: 60
+    trapper_hosts: ""
+    formula: 1
+triggers:
+  trigger1:
+    description: "Disk I/O is overloaded on {HOST.NAME}"
+    expression: "{My_Template_OS_Linux:system.cpu.util[,iowait].avg(5)}>20"
+    priority: 2
+

@@ -1,0 +1,49 @@
+name: "My_Template_ICMP_Ping"
+groups:
+  - "Templates"
+applications:
+  - "ICMP"
+items:
+  item1:
+    name: "ICMP ping"
+    key_: "icmpping"
+    type: 3
+    value_type: 3
+    delay: 60
+    trapper_hosts: ""
+    formula: 1
+  item2:
+    name: "ICMP loss"
+    key_: "icmppingloss"
+    type: 3
+    value_type: 0
+    units: "%"
+    delay: 60
+    trapper_hosts: ""
+    formula: 1
+  item3:
+    name: "ICMP response time"
+    key_: "icmppingsec"
+    type: 3
+    value_type: 0
+    units: "s"
+    delay: 60
+    trapper_hosts: ""
+    formula: 1
+triggers:
+  trigger1:
+    description: "{HOST.NAME} is unavailable by ICMP"
+    expression: "{My_Template_ICMP_Ping:icmpping.max(#3)}=0"
+    priority: 3
+    dependencies:
+      - "trigger2"
+      - "trigger3"
+  trigger2:
+    description: "Ping loss is too high on {HOST.NAME}"
+    expression: "{My_Template_ICMP_Ping:icmppingloss.max(5m)}>20"
+    priority: 2
+  trigger3:
+    description: "Response time is too high on {HOST.NAME}"
+    expression: "{My_Template_ICMP_Ping:icmppingsec.avg(5m)}>0.15"
+    priority: 2
+

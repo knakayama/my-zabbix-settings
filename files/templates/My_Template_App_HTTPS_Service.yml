@@ -1,0 +1,21 @@
+name: "My_Template_App_HTTPS_Service"
+groups:
+  - "Templates"
+applications:
+  - "HTTPS service"
+items:
+  item1:
+    name: "HTTPS service is running"
+    key_: "net.tcp.service[https]"
+    type: 0       # Zabbix agent
+    value_type: 3 # numeric unsinged
+    delay: 60
+    trapper_hosts: ""
+    formula: 1
+    valuemapid: 1
+triggers:
+  trigger1:
+    description: "HTTPS service is down on {HOST.NAME}"
+    expression: "{My_Template_App_HTTPS_Service:net.tcp.service[https].max(#3)}=0"
+    priority: 3
+

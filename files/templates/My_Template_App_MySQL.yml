@@ -1,0 +1,146 @@
+name: "My_Template_App_MySQL"
+groups:
+  - "Templates"
+applications:
+  - "MySQL"
+items:
+  item1:
+    name: "MySQL begin operations per second"
+    key_: "mysql.status[Com_begin]"
+    type: 0
+    value_type: 0
+    units: "qps"
+    delay: 60
+    delta: 1
+    trapper_hosts: ""
+    formula: 1
+  item2:
+    name: "MySQL bytes received per second"
+    key_: "mysql.status[Bytes_received]"
+    type: 0
+    value_type: 0
+    units: "Bps"
+    delay: 60
+    delta: 1
+    trapper_hosts: ""
+    formula: 1
+  item3:
+    name: "MySQL bytes sent per second"
+    key_: "mysql.status[Bytes_sent]"
+    type: 0
+    value_type: 0
+    units: "Bps"
+    delay: 60
+    delta: 1
+    trapper_hosts: ""
+    formula: 1
+  item4:
+    name: "MySQL commit operations per second"
+    key_: "mysql.status[Com_commit]"
+    type: 0
+    value_type: 0
+    units: "qps"
+    delay: 60
+    delta: 1
+    trapper_hosts: ""
+    formula: 1
+  item5:
+    name: "MySQL delete operations per second"
+    key_: "mysql.status[Com_delete]"
+    type: 0
+    value_type: 0
+    units: "qps"
+    delay: 60
+    delta: 1
+    trapper_hosts: ""
+    formula: 1
+  item6:
+    name: "MySQL insert operations per second"
+    key_: "mysql.status[Com_insert]"
+    type: 0
+    value_type: 0
+    units: "qps"
+    delay: 60
+    delta: 1
+    trapper_hosts: ""
+    formula: 1
+  item7:
+    name: "MySQL queries per second"
+    key_: "mysql.status[Questions]"
+    type: 0
+    value_type: 0
+    units: "qps"
+    delay: 60
+    delta: 1
+    trapper_hosts: ""
+    formula: 1
+  item8:
+    name: "MySQL rollback operations per second"
+    key_: "mysql.status[Com_rollback]"
+    type: 0
+    value_type: 0
+    units: "qps"
+    delay: 60
+    delta: 1
+    trapper_hosts: ""
+    formula: 1
+  item9:
+    name: "MySQL select operations per second"
+    key_: "mysql.status[Com_select]"
+    type: 0
+    value_type: 0
+    units: "qps"
+    delay: 60
+    delta: 1
+    trapper_hosts: ""
+    formula: 1
+  item10:
+    name: "MySQL slow queries"
+    key_: "mysql.status[Slow_queries]"
+    type: 0
+    value_type: 3
+    delay: 60
+    trapper_hosts: ""
+    formula: 1
+  item11:
+    name: "MySQL status"
+    key_: "mysql.ping"
+    type: 0
+    value_type: 3
+    delay: 60
+    trapper_hosts: ""
+    formula: 1
+    valuemapid: 1
+  item12:
+    name: "MySQL update operations per second"
+    key_: "mysql.status[Com_update]"
+    type: 0
+    value_type: 0
+    units: "qps"
+    delay: 60
+    delta: 1
+    trapper_hosts: ""
+    formula: 1
+  item13:
+    name: "MySQL uptime"
+    key_: "mysql.status[Uptime]"
+    type: 0
+    value_type: 3
+    units: "uptime"
+    delay: 60
+    trapper_hosts: ""
+    formula: 1
+  item14:
+    name: "MySQL version"
+    key_: "mysql.version"
+    type: 0
+    value_type: 1
+    delay: 3600
+    trapper_hosts: ""
+    formula: 1
+triggers:
+  trigger1:
+    description: "MySQL is down on {HOST.NAME}"
+    expression: "{My_Template_App_MySQL:mysql.ping.last(0)}=0"
+    priority: 2
+

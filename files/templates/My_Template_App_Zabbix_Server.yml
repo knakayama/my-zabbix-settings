@@ -1,0 +1,394 @@
+name: "My_Template_App_Zabbix_Server"
+groups:
+  - "Templates"
+applications:
+  - "Zabbix server"
+items:
+  item1:
+    name: "Values processed by Zabbix server per second"
+    key_: "zabbix[wcache,values]" # Data cache statistics
+    type: 5       # Zabbix internal
+    value_type: 0
+    delay: 60
+    delta: 1
+    trapper_hosts: ""
+    formula: 1
+  item2:
+    name: "Zabbix $2 write cache, % free"
+    key_: "zabbix[wcache,text,pfree]"
+    type: 5
+    value_type: 0
+    units: "%"
+    delay: 60
+    trapper_hosts: ""
+    formula: 1
+  item3:
+    name: "Zabbix $2 write cache, % free"
+    key_: "zabbix[wcache,history,pfree]"
+    type: 5
+    value_type: 0
+    units: "%"
+    delay: 60
+    trapper_hosts: ""
+    formula: 1
+  item4:
+    name: "Zabbix $2 write cache, % free"
+    key_: "zabbix[wcache,trend,pfree]"
+    type: 5
+    value_type: 0
+    units: "%"
+    delay: 60
+    trapper_hosts: ""
+    formula: 1
+  item5:
+    name: "Zabbix $4 $2 processes, in %"
+    key_: "zabbix[process,timer,avg,busy]" # time a paticular zabbix process or a group of process
+    type: 5
+    value_type: 0
+    units: "%"
+    delay: 60
+    trapper_hosts: ""
+    formula: 1
+  item6:
+    name: "Zabbix $4 $2 processes, in %"
+    key_: "zabbix[process,poller,avg,busy]" # time a paticular zabbix process or a group of process
+    type: 5
+    value_type: 0
+    units: "%"
+    delay: 60
+    trapper_hosts: ""
+    formula: 1
+  item7:
+    name: "Zabbix $4 $2 processes, in %"
+    key_: "zabbix[process,icmp pinger,avg,busy]" # time a paticular zabbix process or a group of process
+    type: 5
+    value_type: 0
+    units: "%"
+    delay: 60
+    trapper_hosts: ""
+    formula: 1
+  item8:
+    name: "Zabbix $4 $2 processes, in %"
+    key_: "zabbix[process,discoverer,avg,busy]" # time a paticular zabbix process or a group of process
+    type: 5
+    value_type: 0
+    units: "%"
+    delay: 60
+    trapper_hosts: ""
+    formula: 1
+  item9:
+    name: "Zabbix $4 $2 processes, in %"
+    key_: "zabbix[process,node watcher,avg,busy]" # time a paticular zabbix process or a group of process
+    type: 5
+    value_type: 0
+    units: "%"
+    delay: 60
+    trapper_hosts: ""
+    formula: 1
+  item10:
+    name: "Zabbix $4 $2 processes, in %"
+    key_: "zabbix[process,vmware collector,avg,busy]" # time a paticular zabbix process or a group of process
+    type: 5
+    value_type: 0
+    units: "%"
+    delay: 60
+    trapper_hosts: ""
+    formula: 1
+  item11:
+    name: "Zabbix $4 $2 processes, in %"
+    key_: "zabbix[process,snmp trapper,avg,busy]" # time a paticular zabbix process or a group of process
+    type: 5
+    value_type: 0
+    units: "%"
+    delay: 60
+    trapper_hosts: ""
+    formula: 1
+  item12:
+    name: "Zabbix $4 $2 processes, in %"
+    key_: "zabbix[process,alerter,avg,busy]" # time a paticular zabbix process or a group of process
+    type: 5
+    value_type: 0
+    units: "%"
+    delay: 60
+    trapper_hosts: ""
+    formula: 1
+  item13:
+    name: "Zabbix $4 $2 processes, in %"
+    key_: "zabbix[process,http poller,avg,busy]" # time a paticular zabbix process or a group of process
+    type: 5
+    value_type: 0
+    units: "%"
+    delay: 60
+    trapper_hosts: ""
+    formula: 1
+  item14:
+    name: "Zabbix $4 $2 processes, in %"
+    key_: "zabbix[process,escalator,avg,busy]" # time a paticular zabbix process or a group of process
+    type: 5
+    value_type: 0
+    units: "%"
+    delay: 60
+    trapper_hosts: ""
+    formula: 1
+  item15:
+    name: "Zabbix $4 $2 processes, in %"
+    key_: "zabbix[process,self-monitoring,avg,busy]" # time a paticular zabbix process or a group of process
+    type: 5
+    value_type: 0
+    units: "%"
+    delay: 60
+    trapper_hosts: ""
+    formula: 1
+  item16:
+    name: "Zabbix $4 $2 processes, in %"
+    key_: "zabbix[process,java poller,avg,busy]" # time a paticular zabbix process or a group of process
+    type: 5
+    value_type: 0
+    units: "%"
+    delay: 60
+    trapper_hosts: ""
+    formula: 1
+  item17:
+    name: "Zabbix $4 $2 processes, in %"
+    key_: "zabbix[process,trapper,avg,busy]" # time a paticular zabbix process or a group of process
+    type: 5
+    value_type: 0
+    units: "%"
+    delay: 60
+    trapper_hosts: ""
+    formula: 1
+  item18:
+    name: "Zabbix $4 $2 processes, in %"
+    key_: "zabbix[process,db watchdog,avg,busy]" # time a paticular zabbix process or a group of process
+    type: 5
+    value_type: 0
+    units: "%"
+    delay: 60
+    trapper_hosts: ""
+    formula: 1
+  item19:
+    name: "Zabbix $4 $2 processes, in %"
+    key_: "zabbix[process,unreachable poller,avg,busy]" # time a paticular zabbix process or a group of process
+    type: 5
+    value_type: 0
+    units: "%"
+    delay: 60
+    trapper_hosts: ""
+    formula: 1
+  item20:
+    name: "Zabbix $4 $2 processes, in %"
+    key_: "zabbix[process,housekeeper,avg,busy]" # time a paticular zabbix process or a group of process
+    type: 5
+    value_type: 0
+    units: "%"
+    delay: 60
+    trapper_hosts: ""
+    formula: 1
+  item21:
+    name: "Zabbix $4 $2 processes, in %"
+    key_: "zabbix[process,proxy poller,avg,busy]" # time a paticular zabbix process or a group of process
+    type: 5
+    value_type: 0
+    units: "%"
+    delay: 60
+    trapper_hosts: ""
+    formula: 1
+  item22:
+    name: "Zabbix $4 $2 processes, in %"
+    key_: "zabbix[process,configuration syncer,avg,busy]" # time a paticular zabbix process or a group of process
+    type: 5
+    value_type: 0
+    units: "%"
+    delay: 60
+    trapper_hosts: ""
+    formula: 1
+  item23:
+    name: "Zabbix $4 $2 processes, in %"
+    key_: "zabbix[process,ipmi poller,avg,busy]" # time a paticular zabbix process or a group of process
+    type: 5
+    value_type: 0
+    units: "%"
+    delay: 60
+    trapper_hosts: ""
+    formula: 1
+  item24:
+    name: "Zabbix $4 $2 processes, in %"
+    key_: "zabbix[process,history syncer,avg,busy]" # time a paticular zabbix process or a group of process
+    type: 5
+    value_type: 0
+    units: "%"
+    delay: 60
+    trapper_hosts: ""
+    formula: 1
+  item25:
+    name: "Zabbix configuration cache, % free"
+    key_: "zabbix[rcache,buffer,pfree]" # configuration cache statistics
+    type: 5
+    value_type: 0
+    units: "%"
+    delay: 60
+    trapper_hosts: ""
+    formula: 1
+  item26:
+    name: "Zabbix queue"
+    key_: "zabbix[queue]" # Number of items in the queue which are delayed by from to to seconds, inclusive.
+    type: 5
+    value_type: 3
+    delay: 600
+    trapper_hosts: ""
+    formula: 1
+  item27:
+    name: "Zabbix queue over $2"
+    key_: "zabbix[queue,10m]" # Number of items in the queue which are delayed by from to to seconds, inclusive.
+    type: 5
+    value_type: 3
+    delay: 600
+    trapper_hosts: ""
+    formula: 1
+  item28:
+    name: "Zabbix value cache, % free"
+    key_: "zabbix[vcache,buffer,pfree]" # value cache statistics
+    type: 5
+    value_type: 0
+    delay: 60
+    trapper_hosts: ""
+    formula: 1
+  item29:
+    name: "Zabbix value cache hits"
+    key_: "zabbix[vcache,cache,hits]" # value cache effectiveness
+    type: 5
+    value_type: 0
+    units: "vps"
+    delay: 60
+    delta: 1
+    trapper_hosts: ""
+    formula: 1
+  item30:
+    name: "Zabbix value cache misses"
+    key_: "zabbix[vcache,cache,misses]" # value cache effectiveness
+    type: 5
+    value_type: 0
+    units: "vps"
+    delay: 60
+    delta: 1
+    trapper_hosts: ""
+    formula: 1
+  item31:
+    name: "Zabbix vmware cache, % free"
+    key_: "zabbix[vmware,buffer,pfree]" # VMware cache statistics
+    type: 5
+    value_type: 0
+    units: "%"
+    delay: 60
+    trapper_hosts: ""
+    formula: 1
+triggers:
+  trigger1:
+    description: "Less than 5% free in the value cache"
+    expression: "{My_Template_App_Zabbix_Server:zabbix[vcache,buffer,pfree].min(10m)}<5"
+    priority: 3
+  trigger2:
+    description: "Less than 25% free in the configuration cache"
+    expression: "{My_Template_App_Zabbix_Server:zabbix[rcache,buffer,pfree].min(10m)}<25"
+    priority: 3
+  trigger3:
+    description: "Less than 25% free in the history cache"
+    expression: "{My_Template_App_Zabbix_Server:zabbix[wcache,history,pfree].min(10m)}<25"
+    priority: 3
+  trigger4:
+    description: "Less than 25% free in the text history cache"
+    expression: "{My_Template_App_Zabbix_Server:zabbix[wcache,text,pfree].min(10m)}<25"
+    priority: 3
+  trigger5:
+    description: "Less than 25% free in the trends cache"
+    expression: "{My_Template_App_Zabbix_Server:zabbix[wcache,trend,pfree].min(10m)}<25"
+    priority: 3
+  trigger6:
+    description: "Less than 25% free in the vmware cache"
+    expression: "{My_Template_App_Zabbix_Server:zabbix[vmware,buffer,pfree].min(10m)}<25"
+    priority: 3
+  trigger7:
+    description: "More than 100 items having missing data for more than 10 minutes"
+    expression: "{My_Template_App_Zabbix_Server:zabbix[queue,10m].min(10m)}>100"
+    priority: 2
+  trigger8:
+    description: "Zabbix alerter processes more than 75% busy"
+    expression: "({TRIGGER.VALUE}=0&{My_Template_App_Zabbix_Server:zabbix[process,alerter,avg,busy].avg(10m)}>75)|({TRIGGER.VALUE}=1&{My_Template_App_Zabbix_Server:zabbix[process,alerter,avg,busy].avg(10m)}>65)"
+    priority: 3
+  trigger9:
+    description: "Zabbix configuration syncer processes more than 75% busy"
+    expression: "({TRIGGER.VALUE}=0&{My_Template_App_Zabbix_Server:zabbix[process,configuration syncer,avg,busy].avg(10m)}>75)|({TRIGGER.VALUE}=1&{My_Template_App_Zabbix_Server:zabbix[process,configuration syncer,avg,busy].avg(10m)}>65)"
+    priority: 3
+  trigger10:
+    description: "Zabbix db watchdog processes more than 75% busy"
+    expression: "({TRIGGER.VALUE}=0&{My_Template_App_Zabbix_Server:zabbix[process,db watchdog,avg,busy].avg(10m)}>75)|({TRIGGER.VALUE}=1&{My_Template_App_Zabbix_Server:zabbix[process,db watchdog,avg,busy].avg(10m)}>65)"
+    priority: 3
+  trigger11:
+    description: "Zabbix discoverer processes more than 75% busy"
+    expression: "({TRIGGER.VALUE}=0&{My_Template_App_Zabbix_Server:zabbix[process,discoverer,avg,busy].avg(10m)}>75)|({TRIGGER.VALUE}=1&{My_Template_App_Zabbix_Server:zabbix[process,discoverer,avg,busy].avg(10m)}>65)"
+    priority: 3
+  trigger12:
+    description: "Zabbix escalator processes more than 75% busy"
+    expression: "({TRIGGER.VALUE}=0&{My_Template_App_Zabbix_Server:zabbix[process,escalator,avg,busy].avg(10m)}>75)|({TRIGGER.VALUE}=1&{My_Template_App_Zabbix_Server:zabbix[process,escalator,avg,busy].avg(10m)}>65)"
+    priority: 3
+  trigger13:
+    description: "Zabbix history syncer processes more than 75% busy"
+    expression: "({TRIGGER.VALUE}=0&{My_Template_App_Zabbix_Server:zabbix[process,history syncer,avg,busy].avg(10m)}>75)|({TRIGGER.VALUE}=1&{My_Template_App_Zabbix_Server:zabbix[process,history syncer,avg,busy].avg(10m)}>65)"
+    priority: 3
+  trigger14:
+    description: "Zabbix housekeeper processes more than 75% busy"
+    expression: "({TRIGGER.VALUE}=0&{My_Template_App_Zabbix_Server:zabbix[process,housekeeper,avg,busy].avg(30m)}>75)|({TRIGGER.VALUE}=1&{My_Template_App_Zabbix_Server:zabbix[process,housekeeper,avg,busy].avg(30m)}>65)"
+    priority: 3
+  trigger15:
+    description: "Zabbix http poller processes more than 75% busy"
+    expression: "({TRIGGER.VALUE}=0&{My_Template_App_Zabbix_Server:zabbix[process,http poller,avg,busy].avg(10m)}>75)|({TRIGGER.VALUE}=1&{My_Template_App_Zabbix_Server:zabbix[process,http poller,avg,busy].avg(10m)}>65)"
+    priority: 3
+  trigger16:
+    description: "Zabbix icmp pinger processes more than 75% busy"
+    expression: "({TRIGGER.VALUE}=0&{My_Template_App_Zabbix_Server:zabbix[process,icmp pinger,avg,busy].avg(10m)}>75)|({TRIGGER.VALUE}=1&{My_Template_App_Zabbix_Server:zabbix[process,icmp pinger,avg,busy].avg(10m)}>65)"
+    priority: 3
+  trigger17:
+    description: "Zabbix ipmi poller processes more than 75% busy"
+    expression: "({TRIGGER.VALUE}=0&{My_Template_App_Zabbix_Server:zabbix[process,ipmi poller,avg,busy].avg(10m)}>75)|({TRIGGER.VALUE}=1&{My_Template_App_Zabbix_Server:zabbix[process,ipmi poller,avg,busy].avg(10m)}>65)"
+    priority: 3
+  trigger18:
+    description: "Zabbix java poller processes more than 75% busy"
+    expression: "({TRIGGER.VALUE}=0&{My_Template_App_Zabbix_Server:zabbix[process,java poller,avg,busy].avg(10m)}>75)|({TRIGGER.VALUE}=1&{My_Template_App_Zabbix_Server:zabbix[process,java poller,avg,busy].avg(10m)}>65)"
+    priority: 3
+  trigger19:
+    description: "Zabbix node watcher processes more than 75% busy"
+    expression: "({TRIGGER.VALUE}=0&{My_Template_App_Zabbix_Server:zabbix[process,node watcher,avg,busy].avg(10m)}>75)|({TRIGGER.VALUE}=1&{My_Template_App_Zabbix_Server:zabbix[process,node watcher,avg,busy].avg(10m)}>65)"
+    priority: 3
+  trigger20:
+    description: "Zabbix poller processes more than 75% busy"
+    expression: "({TRIGGER.VALUE}=0&{My_Template_App_Zabbix_Server:zabbix[process,poller,avg,busy].avg(10m)}>75)|({TRIGGER.VALUE}=1&{My_Template_App_Zabbix_Server:zabbix[process,poller,avg,busy].avg(10m)}>65)"
+    priority: 3
+  trigger21:
+    description: "Zabbix proxy poller processes more than 75% busy"
+    expression: "({TRIGGER.VALUE}=0&{My_Template_App_Zabbix_Server:zabbix[process,proxy poller,avg,busy].avg(10m)}>75)|({TRIGGER.VALUE}=1&{My_Template_App_Zabbix_Server:zabbix[process,proxy poller,avg,busy].avg(10m)}>65)"
+    priority: 3
+  trigger22:
+    description: "Zabbix self-monitoring processes more than 75% busy"
+    expression: "({TRIGGER.VALUE}=0&{My_Template_App_Zabbix_Server:zabbix[process,self-monitoring,avg,busy].min(10m)}>75)|({TRIGGER.VALUE}=1&{My_Template_App_Zabbix_Server:zabbix[process,self-monitoring,avg,busy].min(10m)}>65)"
+    priority: 3
+  trigger23:
+    description: "Zabbix snmp trapper processes more than 75% busy"
+    expression: "({TRIGGER.VALUE}=0&{My_Template_App_Zabbix_Server:zabbix[process,snmp trapper,avg,busy].avg(10m)}>75)|({TRIGGER.VALUE}=1&{My_Template_App_Zabbix_Server:zabbix[process,snmp trapper,avg,busy].avg(10m)}>65)"
+    priority: 3
+  trigger24:
+    description: "Zabbix timer processes more than 75% busy"
+    expression: "({TRIGGER.VALUE}=0&{My_Template_App_Zabbix_Server:zabbix[process,timer,avg,busy].avg(10m)}>75)|({TRIGGER.VALUE}=1&{My_Template_App_Zabbix_Server:zabbix[process,timer,avg,busy].avg(10m)}>65)"
+    priority: 3
+  trigger25:
+    description: "Zabbix trapper processes more than 75% busy"
+    expression: "({TRIGGER.VALUE}=0&{My_Template_App_Zabbix_Server:zabbix[process,trapper,avg,busy].avg(10m)}>75)|({TRIGGER.VALUE}=1&{My_Template_App_Zabbix_Server:zabbix[process,trapper,avg,busy].avg(10m)}>65)"
+    priority: 3
+  trigger26:
+    description: "Zabbix unreachable poller processes more than 75% busy"
+    expression: "({TRIGGER.VALUE}=0&{My_Template_App_Zabbix_Server:zabbix[process,unreachable poller,avg,busy].avg(10m)}>75)|({TRIGGER.VALUE}=1&{My_Template_App_Zabbix_Server:zabbix[process,unreachable poller,avg,busy].avg(10m)}>65)"
+    priority: 3
+  trigger27:
+    description: "Zabbix vmware collector processes more than 75% busy"
+    expression: "({TRIGGER.VALUE}=0&{My_Template_App_Zabbix_Server:zabbix[process,vmware collector,avg,busy].avg(10m)}>75)|({TRIGGER.VALUE}=1&{My_Template_App_Zabbix_Server:zabbix[process,vmware collector,avg,busy].avg(10m)}>65)"
+    priority: 3
+

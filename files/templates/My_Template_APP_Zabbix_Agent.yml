@@ -1,0 +1,45 @@
+name: "My_Template_App_Zabbix_Agent"
+groups:
+  - "Templates"
+applications:
+  - "Zabbix agent"
+items:
+  item1:
+    name: "Agent ping"
+    key_: "agent.ping"
+    type: 0
+    value_type: 3
+    delay: 60
+    trapper_hosts: ""
+    formula: 1
+    valuemapid: 10 # Zabbix agent ping status
+  item2:
+    name: "Hostname of zabbix_agent(d) is running"
+    key_: "agent.hostname"
+    type: 0
+    value_type: 1 # Character
+    delay: 3600
+    trapper_hosts: ""
+    formula: 1
+  item3:
+    name: "Version of zabbix_agent(d) is running"
+    key_: "agent.version"
+    type: 0
+    value_type: 1
+    delay: 3600
+    trapper_hosts: ""
+    formula: 1
+triggers:
+  trigger1:
+    description: "Zabbix agent on {HOST.NAME} is unreachable for 5 min"
+    expression: "{My_Template_App_Zabbix_Agent:agent.ping.nodata(5m)}=1"
+    priority: 3
+  trigger2:
+    description: "Hostname of zabbix_agent(d) was changed on {HOST.NAME}"
+    expression: "{My_Template_App_Zabbix_Agent:agent.hostname.diff(0)}=0"
+    priority: 1 # information
+  trigger3:
+    description: "Version of zabbix_agent(d) was changed on {HOST.NAME}"
+    expression: "{My_Template_App_Zabbix_Agent:agent.version.diff(0)}=0"
+    priority: 1
+

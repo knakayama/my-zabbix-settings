@@ -1,0 +1,21 @@
+name: "My_Template_SSH_Service"
+groups:
+  - "Templates"
+applications:
+  - "SSH service"
+items:
+  item1:
+    name: "SSH service is running"
+    key_: "net.tcp.service[ssh]"
+    type: 3 # Simple check
+    value_type: 3
+    delay: 60
+    trapper_hosts: ""
+    formula: 1
+    valuemapid: 1
+triggers:
+  trigger1:
+    description: "SSH service is down on {HOST.NAME}"
+    expression: "{My_Template_SSH_Service:net.tcp.service[ssh].max(#3)}=0"
+    priority: 3
+

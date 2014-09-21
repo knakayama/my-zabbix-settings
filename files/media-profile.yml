@@ -1,0 +1,7 @@
+Admin:
+  description: "my_smtp_server"
+  sendto: "knakayama.sh@gmail.com"
+  active: 0
+  period: "1-7,00:00-24:00"
+  severity: "56"
+
